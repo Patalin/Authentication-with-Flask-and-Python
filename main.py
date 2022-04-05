@@ -45,17 +45,17 @@ def register():
             flash('User already exist into our database')
             return redirect(url_for('login'))
 
-            new_user = User(
-                name=request.form.get('name'),
-                email=request.form.get('email'),
-                password=generate_password_hash(request.form.get('password'), method='pbkdf2:sha256', salt_length=6)
+        new_user = User(
+            name=request.form.get('name'),
+            email=request.form.get('email'),
+            password=generate_password_hash(request.form.get('password'), method='pbkdf2:sha256', salt_length=6)
             )
-            db.session.add(new_user)
-            db.session.commit()
-            # Log in and authenticate user after adding details to database
-            login_user(new_user)
+        db.session.add(new_user)
+        db.session.commit()
+        # Log in and authenticate user after adding details to database
+        login_user(new_user)
 
-            return redirect(url_for('secrets', name=new_user.name))
+        return redirect(url_for('secrets', name=new_user.name))
     return render_template("register.html", logged_in=current_user.is_authenticated)
 
 
