@@ -2,13 +2,32 @@
 {% block content %}
 
 <div class="box">
-	<h1>Register</h1>
+   <div class="login-box">
+  <h2>Register</h2>
     <form action="{{ url_for('register') }}" method="post">
-    	<input type="text" name="name" placeholder="Name" required="required" />
-		<input type="email" name="email" placeholder="Email" required="required" />
-        <input type="password" name="password" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Sign me up.</button>
+        <div class="user-box">
+      <input type="text" name="name" required="required">
+      <label>Username</label>
+    </div>
+        <div class="user-box">
+      <input type="text" name="email" required="required">
+      <label>Email</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" required="required">
+      <label>Password</label>
+    </div>
+    <button type="submit">
+        <a>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+        </a>
+    </button>
     </form>
+        </div>
 </div>
 
 {% endblock %}

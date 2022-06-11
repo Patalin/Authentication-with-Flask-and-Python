@@ -2,10 +2,28 @@
 {% block content %}
 
 <div class="box">
-	<h1>Flask Authentication</h1>
 
-  <a href="{{ url_for('login') }}" class="btn btn-primary btn-block btn-large">Login</a>
-  <a href="{{ url_for('register') }}" class="btn btn-secondary btn-block btn-large">Register</a>
+
+    <div class="login-box">
+        <h1>Flask Authentication</h1>
+        <form>
+        <a href="{{ url_for('login') }}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Login
+        </a>
+        <a href="{{ url_for('register') }}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Register
+        </a>
+        </form>
+    </div>
+
 
 </div>
 
